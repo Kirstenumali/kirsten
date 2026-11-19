@@ -1,0 +1,178 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Submit Your Profile</title>
+  <style>
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-family: Inter, system-ui, -apple-system, sans-serif;
+      background: linear-gradient(135deg, #0f1b21, #1a2e38);
+      color: #edf7f8;
+      padding: 20px;
+    }
+    .card {
+      width: 100%;
+      max-width: 520px;
+      background: rgba(18, 31, 37, 0.9);
+      border: 1px solid rgba(179, 211, 219, 0.2);
+      border-radius: 12px;
+      padding: 40px 32px;
+      box-shadow: 0 24px 80px rgba(0, 0, 0, 0.5);
+    }
+    h1 {
+      margin: 0 0 6px;
+      font-size: 1.6rem;
+    }
+    p {
+      margin: 0 0 24px;
+      color: #a9bbc2;
+      font-size: 0.92rem;
+    }
+    label {
+      display: grid;
+      gap: 6px;
+      margin-bottom: 16px;
+      font-size: 0.85rem;
+      font-weight: 600;
+      color: #a9bbc2;
+    }
+    input, textarea, select {
+      width: 100%;
+      padding: 12px 14px;
+      border: 1px solid rgba(179, 211, 219, 0.2);
+      border-radius: 8px;
+      background: rgba(255, 255, 255, 0.06);
+      color: #edf7f8;
+      font: inherit;
+      font-size: 0.95rem;
+      transition: border-color 200ms ease;
+    }
+    input:focus, textarea:focus, select:focus {
+      border-color: #56d6d6;
+      box-shadow: 0 0 0 3px rgba(86, 214, 214, 0.15);
+      outline: none;
+    }
+    select option { background: #1a2e38; color: #edf7f8; }
+    button {
+      width: 100%;
+      padding: 14px;
+      border: none;
+      border-radius: 8px;
+      background: linear-gradient(135deg, #087b83, #00a6a6);
+      color: #fff;
+      font: inherit;
+      font-size: 1rem;
+      font-weight: 700;
+      cursor: pointer;
+      transition: transform 180ms ease, box-shadow 180ms ease;
+    }
+    button:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 12px 30px rgba(8, 123, 131, 0.4);
+    }
+    .status {
+      margin-top: 16px;
+      text-align: center;
+      font-size: 0.9rem;
+    }
+    .back-link {
+      display: block;
+      text-align: center;
+      margin-top: 18px;
+      color: #56d6d6;
+      font-size: 0.88rem;
+      text-decoration: none;
+    }
+    .back-link:hover { text-decoration: underline; }
+  </style>
+</head>
+<body>
+  <div class="card">
+    <h1>Submit Your Profile</h1>
+    <p>Fill in your details and we'll get back to you.</p>
+
+    <form id="profileForm">
+      <label>
+        Full Name
+        <input name="name" type="text" required placeholder="e.g. Jane Doe">
+      </label>
+      <label>
+        Email Address
+        <input name="email" type="email" required placeholder="jane@example.com">
+      </label>
+      <label>
+        Phone Number
+        <input name="phone" type="tel" placeholder="+1 234 567 890">
+      </label>
+      <label>
+        Role / Interest
+        <select name="role">
+          <option value="">Select your role...</option>
+          <option value="Integration Engineer">Integration Engineer</option>
+          <option value="Robotics Engineer">Robotics Engineer</option>
+          <option value="Software Developer">Software Developer</option>
+          <option value="Cybersecurity Specialist">Cybersecurity Specialist</option>
+          <option value="Student / Intern">Student / Intern</option>
+          <option value="Other">Other</option>
+        </select>
+      </label>
+      <label>
+        Message / Notes
+        <textarea name="message" rows="4" placeholder="Tell us a bit about yourself..."></textarea>
+      </label>
+
+      <button type="submit">Submit Profile</button>
+      <p class="status" id="status"></p>
+    </form>
+
+    <a class="back-link" href="/">&larr; Back to main site</a>
+  </div>
+
+  <script>
+    const form = document.getElementById('profileForm');
+    const status = document.getElementById('status');
+
+    form.addEventListener('submit', async (e) => {
+      e.preventDefault();
+      const formData = new FormData(form);
+      const payload = {
+        name: formData.get('name'),
+        email: formData.get('email'),
+        phone: formData.get('phone'),
+        role: formData.get('role'),
+        message: formData.get('message')
+      };
+
+      status.textContent = 'Sending...';
+      status.style.color = '#a9bbc2';
+
+      try {
+        const res = await fetch('/submit-profile', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify(payload)
+        });
+        const data = await res.json();
+        if (data.success) {
+          status.textContent = 'Profile submitted! We will be in touch.';
+          status.style.color = '#56d6d6';
+          form.reset();
+        } else {
+          status.textContent = 'Error: ' + data.error;
+          status.style.color = '#ff7a59';
+        }
+      } catch (err) {
+        status.textContent = 'Failed to send. Please try again.';
+        status.style.color = '#ff7a59';
+      }
+    });
+  </script>
+</body>
+</html>

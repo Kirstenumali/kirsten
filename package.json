@@ -1,0 +1,8 @@
+{
+  "name": "kirsten-workspace",
+  "private": true,
+  "scripts": {
+    "start": "node MyWebsite/server/server.js",
+    "dashboard": "node MyWebsite/server/dashboard-local.js"
+  }
+}

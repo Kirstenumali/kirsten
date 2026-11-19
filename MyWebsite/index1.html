@@ -1,0 +1,359 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Kirsten Umali · Integration · Robotics · Security</title>
+<link rel="canonical" href="https://kirstenumali.online/">
+<link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='6' fill='%231e3d47'/%3E%3Ctext x='16' y='21' text-anchor='middle' fill='%23e8a83a' font-family='system-ui,sans-serif' font-size='16' font-weight='800'%3EK/%3E%3C/text%3E%3C/svg%3E">
+<link rel="apple-touch-icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='6' fill='%231e3d47'/%3E%3Ctext x='16' y='21' text-anchor='middle' fill='%23e8a83a' font-family='system-ui,sans-serif' font-size='16' font-weight='800'%3EK/%3E%3C/text%3E%3C/svg%3E">
+<meta property="og:title" content="Kirsten Umali | Integration Engineer">
+<meta property="og:description" content="Robotics, embedded systems, Android apps, APIs, and cybersecurity — based in Dubai.">
+<meta property="og:image" content="https://kirstenumali.online/assets/pepper.png">
+<meta property="og:url" content="https://kirstenumali.online">
+<meta name="twitter:card" content="summary_large_image">
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth;background:#14181c;color:#dce4e8}
+body{font-family:'Times New Roman',Times,serif;background:#14181c;line-height:1.6}
+
+/* marble bg */
+.marble-bg{position:fixed;inset:0;z-index:-1;background:
+  radial-gradient(ellipse 140% 70% at 10% 30%, rgba(200,180,155,0.04) 0%, transparent 70%),
+  radial-gradient(ellipse 100% 80% at 90% 70%, rgba(180,195,200,0.03) 0%, transparent 70%),
+  radial-gradient(ellipse 60% 90% at 50% 50%, rgba(160,170,165,0.02) 0%, transparent 70%),
+  linear-gradient(170deg, #14181c 0%, #1a2025 30%, #161c21 60%, #12171b 100%)}
+.marble-bg::after{content:'';position:absolute;inset:0;background:
+  repeating-linear-gradient(100deg,transparent,transparent 40%,rgba(220,210,190,0.008) 42%,transparent 44%),
+  repeating-linear-gradient(160deg,transparent,transparent 55%,rgba(200,195,185,0.006) 57%,transparent 59%),
+  repeating-linear-gradient(70deg,transparent,transparent 25%,rgba(210,205,195,0.005) 27%,transparent 29%);
+  pointer-events:none}
+
+a{color:inherit;text-decoration:none}
+img{max-width:100%;display:block}
+
+/* nav */
+nav{display:flex;align-items:center;justify-content:space-between;padding:20px 32px;max-width:1280px;margin:0 auto;flex-wrap:wrap;gap:14px;position:relative}
+nav::after{content:'';position:absolute;bottom:0;left:32px;right:32px;height:1px;background:linear-gradient(90deg,transparent,rgba(200,185,165,0.15),rgba(200,185,165,0.08),transparent)}
+nav .brand{font-weight:700;font-size:1.15rem;display:flex;align-items:center;gap:10px;color:#e8e0d8;letter-spacing:0.04em}
+nav .brand span{display:inline-flex;width:28px;height:28px;border:1px solid rgba(200,185,165,0.3);border-radius:50%;align-items:center;justify-content:center;font-size:0.75rem;color:#c8b9a5}
+nav .nav-links{display:flex;gap:24px;flex-wrap:wrap}
+nav .nav-links a{font-size:0.8rem;letter-spacing:0.06em;text-transform:uppercase;color:#8a9ba5;transition:color .3s;padding:4px 0;font-family:system-ui,-apple-system,sans-serif}
+nav .nav-links a:hover{color:#d4c5b0}
+
+/* hero */
+.hero{max-width:1280px;margin:0 auto;padding:80px 32px 48px;display:grid;grid-template-columns:1fr 1fr;gap:56px;align-items:center}
+.hero h1{font-size:2.8rem;font-weight:700;line-height:1.18;margin-bottom:18px;letter-spacing:-0.01em;color:#ece6df}
+.hero .sub{color:#8a9ba5;font-size:1.05rem;margin-bottom:28px;max-width:520px;line-height:1.7;font-family:system-ui,-apple-system,sans-serif}
+.hero .tag{display:inline-flex;gap:8px;flex-wrap:wrap;margin-bottom:22px}
+.hero .tag span{font-size:0.65rem;font-weight:600;text-transform:uppercase;letter-spacing:0.1em;border:1px solid rgba(200,185,165,0.2);padding:5px 14px;border-radius:999px;color:#c8b9a5;font-family:system-ui,-apple-system,sans-serif}
+.hero .btns{display:flex;gap:14px;flex-wrap:wrap}
+.hero .btns a{padding:11px 28px;font-size:0.88rem;transition:all .25s;font-family:system-ui,-apple-system,sans-serif;letter-spacing:0.02em}
+.hero .btns .primary{background:#d4c5b0;color:#14181c;font-weight:600}
+.hero .btns .primary:hover{background:#e0d4c2;transform:translateY(-2px)}
+.hero .btns .secondary{border:1px solid rgba(200,185,165,0.2);color:#8a9ba5}
+.hero .btns .secondary:hover{border-color:#c8b9a5;color:#dce4e8}
+.hero .hero-visual{position:relative;border-radius:14px;overflow:hidden;aspect-ratio:4/3}
+.hero .hero-visual::before{content:'';position:absolute;inset:0;border:1px solid rgba(200,185,165,0.1);border-radius:14px;z-index:1;pointer-events:none}
+.hero .hero-visual img{width:100%;height:100%;object-fit:cover;border-radius:14px}
+
+/* stats */
+.stats{max-width:1280px;margin:0 auto;padding:0 32px 56px;display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:rgba(200,185,165,0.04);border:1px solid rgba(200,185,165,0.06);border-radius:12px;overflow:hidden}
+.stats article{padding:28px 24px;background:#161c21;position:relative}
+.stats article+article{border-left:1px solid rgba(200,185,165,0.04)}
+.stats article span{font-size:0.65rem;font-weight:600;color:#6a7a85;letter-spacing:0.12em;font-family:system-ui,-apple-system,sans-serif}
+.stats article strong{display:block;font-size:1.05rem;font-weight:700;margin:10px 0 6px;color:#d4c5b0;letter-spacing:0.02em}
+.stats article p{font-size:0.82rem;color:#6a7a85;line-height:1.6;font-family:system-ui,-apple-system,sans-serif}
+
+/* section */
+.section{padding:72px 32px}
+.section-inner{max-width:1280px;margin:0 auto}
+.section h2{font-size:2rem;font-weight:700;margin-bottom:8px;color:#ece6df;letter-spacing:-0.01em}
+.section .eyebrow{font-size:0.6rem;font-weight:600;text-transform:uppercase;letter-spacing:0.15em;color:#8a7a65;margin-bottom:8px;font-family:system-ui,-apple-system,sans-serif}
+
+/* skills */
+.skill-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;margin-top:28px;background:rgba(200,185,165,0.04);border:1px solid rgba(200,185,165,0.06);border-radius:10px;overflow:hidden}
+.skill-card{padding:24px;background:#161c21;position:relative}
+.skill-card h3{font-size:0.92rem;font-weight:700;color:#d4c5b0;margin-bottom:8px;letter-spacing:0.02em}
+.skill-card p{font-size:0.8rem;color:#6a7a85;line-height:1.6;font-family:system-ui,-apple-system,sans-serif}
+
+/* snapshots strip */
+.snap-strip{overflow:hidden;padding:0;margin:28px -32px 0}
+.snap-track{display:flex;gap:14px;width:max-content;animation:slideRight 28s linear infinite;padding:0 32px}
+.snap-track figure{flex:0 0 260px;margin:0;border-radius:8px;overflow:hidden;border:1px solid rgba(200,185,165,0.08);background:#161c21}
+.snap-track img{width:100%;height:170px;object-fit:contain;display:block;padding:12px;background:#131a1e}
+@keyframes slideRight{from{transform:translateX(-50%)}to{transform:translateX(0)}}
+
+/* tools */
+.tool-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;margin-top:28px;background:rgba(200,185,165,0.04);border:1px solid rgba(200,185,165,0.06);border-radius:10px;overflow:hidden}
+.tool-card{padding:24px;background:#161c21}
+.tool-card h3{font-size:0.88rem;font-weight:700;color:#d4c5b0;margin-bottom:8px;letter-spacing:0.02em}
+.tool-card p{font-size:0.8rem;color:#6a7a85;line-height:1.6;font-family:system-ui,-apple-system,sans-serif}
+
+/* security */
+.sec-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;margin-top:28px;background:rgba(200,185,165,0.04);border:1px solid rgba(200,185,165,0.06);border-radius:10px;overflow:hidden}
+.sec-card{padding:24px;background:#161c21;border-left:2px solid rgba(200,185,165,0.12)}
+.sec-card h3{font-size:0.88rem;font-weight:700;color:#d4c5b0;margin-bottom:8px}
+.sec-card p{font-size:0.8rem;color:#6a7a85;line-height:1.6;font-family:system-ui,-apple-system,sans-serif}
+
+/* work */
+.work-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;margin-top:28px;background:rgba(200,185,165,0.04);border:1px solid rgba(200,185,165,0.06);border-radius:10px;overflow:hidden}
+.work-card{padding:28px 24px;background:#161c21;transition:background .25s}
+.work-card:hover{background:#1a2228}
+.work-card .tag{font-size:0.6rem;font-weight:600;text-transform:uppercase;letter-spacing:0.1em;color:#c8b9a5;margin-bottom:10px;display:inline-block;font-family:system-ui,-apple-system,sans-serif}
+.work-card h3{font-size:0.92rem;font-weight:700;color:#ece6df;margin-bottom:8px}
+.work-card p{font-size:0.8rem;color:#6a7a85;line-height:1.6;font-family:system-ui,-apple-system,sans-serif}
+
+/* timeline */
+.timeline-wrap{display:grid;grid-template-columns:1fr 1fr;gap:32px;margin-top:28px}
+.timeline{display:grid;gap:0;padding:0;position:relative}
+.timeline::before{content:'';position:absolute;left:16px;top:0;bottom:0;width:1px;background:linear-gradient(to bottom,rgba(200,185,165,0.15),rgba(200,185,165,0.03))}
+.tl-item{display:grid;grid-template-columns:40px 1fr;gap:18px;padding:18px 0;position:relative}
+.tl-item::before{content:'';position:absolute;left:11px;top:26px;width:10px;height:10px;border-radius:50%;background:#1a2228;border:2px solid rgba(200,185,165,0.3)}
+.tl-date{font-size:0.72rem;font-weight:700;color:#8a7a65;letter-spacing:0.04em;font-family:system-ui,-apple-system,sans-serif}
+.tl-item h3{font-size:0.9rem;font-weight:700;color:#ece6df;margin-bottom:4px}
+.tl-item p{font-size:0.78rem;color:#6a7a85;line-height:1.6;font-family:system-ui,-apple-system,sans-serif}
+
+.exp-total{display:flex;justify-content:center;margin-top:36px;grid-column:1/-1}
+.exp-total a{display:inline-flex;align-items:center;gap:8px;border:1px solid rgba(200,185,165,0.2);border-radius:999px;padding:10px 30px;font-size:0.88rem;font-weight:600;color:#c8b9a5;transition:all .25s;font-family:system-ui,-apple-system,sans-serif}
+.exp-total a:hover{background:rgba(200,185,165,0.06);border-color:rgba(200,185,165,0.35);color:#ece6df}
+
+/* credentials */
+.cred{display:grid;grid-template-columns:1fr 1fr;gap:40px;margin-top:28px}
+.edu-panel{border:1px solid rgba(200,185,165,0.06);border-radius:10px;padding:28px;background:#161c21}
+.edu-panel .eyebrow{margin-bottom:6px}
+.edu-panel h2{font-size:1.2rem;margin-bottom:10px}
+.edu-panel p{font-size:0.82rem;color:#6a7a85;line-height:1.7;font-family:system-ui,-apple-system,sans-serif}
+.cert-list{border:1px solid rgba(200,185,165,0.06);border-radius:10px;padding:28px;background:#161c21}
+.cert-list h3{font-size:0.8rem;font-weight:700;color:#d4c5b0;margin-bottom:10px;text-transform:uppercase;letter-spacing:0.06em;font-family:system-ui,-apple-system,sans-serif}
+.cert-row{display:flex;flex-wrap:wrap;gap:6px;margin-bottom:20px}
+.cert-chip{font-size:0.72rem;background:#131a1e;border:1px solid rgba(200,185,165,0.08);border-radius:999px;padding:4px 14px;color:#6a7a85;font-family:system-ui,-apple-system,sans-serif}
+.lang-text{font-size:0.82rem;color:#6a7a85;font-family:system-ui,-apple-system,sans-serif}
+
+/* contact */
+.contact-wrap{display:grid;grid-template-columns:1fr 1fr;gap:48px;margin-top:28px}
+.contact-wrap .info p{font-size:0.85rem;color:#6a7a85;line-height:1.7;max-width:420px;font-family:system-ui,-apple-system,sans-serif}
+.contact-wrap form{display:grid;gap:16px}
+.contact-wrap label{display:grid;gap:5px;font-size:0.78rem;color:#8a9ba5;font-family:system-ui,-apple-system,sans-serif;letter-spacing:0.03em}
+.contact-wrap input,.contact-wrap textarea{background:#131a1e;border:1px solid rgba(200,185,165,0.1);border-radius:6px;padding:10px 14px;color:#dce4e8;font-size:0.9rem;font-family:system-ui,-apple-system,sans-serif;outline:none;transition:border-color .25s}
+.contact-wrap input:focus,.contact-wrap textarea:focus{border-color:rgba(200,185,165,0.35)}
+.contact-wrap button{background:#d4c5b0;color:#14181c;border:none;padding:10px 28px;border-radius:6px;font-weight:600;font-size:0.88rem;cursor:pointer;transition:background .25s;justify-self:start;font-family:system-ui,-apple-system,sans-serif}
+.contact-wrap button:hover{background:#e0d4c2}
+
+/* footer */
+footer{text-align:center;padding:36px 32px;font-size:0.75rem;color:#4a5a65;border-top:1px solid rgba(200,185,165,0.05);max-width:1280px;margin:0 auto;font-family:system-ui,-apple-system,sans-serif;letter-spacing:0.04em}
+
+/* marble divider */
+.marble-div{height:1px;max-width:1280px;margin:0 auto;background:linear-gradient(90deg,transparent,rgba(200,185,165,0.08) 20%,rgba(200,185,165,0.04) 50%,rgba(200,185,165,0.08) 80%,transparent)}
+
+/* responsive */
+@media(max-width:980px){
+  .hero{grid-template-columns:1fr;padding:56px 24px 40px;gap:40px}
+  .hero h1{font-size:2.2rem}
+  .skill-grid,.tool-grid,.work-grid{grid-template-columns:repeat(2,1fr)}
+  .sec-grid{grid-template-columns:1fr}
+  .cred{grid-template-columns:1fr}
+  .contact-wrap{grid-template-columns:1fr}
+  .timeline-wrap{grid-template-columns:1fr}
+}
+@media(max-width:680px){
+  nav{padding:16px 20px;flex-direction:column;align-items:flex-start}
+  .section{padding:48px 20px}
+  .skill-grid,.tool-grid,.work-grid{grid-template-columns:1fr}
+  .stats{grid-template-columns:1fr}
+  .stats article+article{border-left:none;border-top:1px solid rgba(200,185,165,0.04)}
+  .hero h1{font-size:1.7rem}
+  .tl-item{grid-template-columns:1fr;gap:6px}
+  .tl-item::before{display:none}
+  .timeline::before{display:none}
+}
+</style>
+</head>
+<body>
+<div class="marble-bg"></div>
+
+<nav>
+  <div class="brand"><span>&#9670;</span> Kirsten Umali</div>
+  <div class="nav-links">
+    <a href="#skills">Skills</a>
+    <a href="#experience">Experience</a>
+    <a href="#work">Work</a>
+    <a href="#contact">Contact</a>
+  </div>
+</nav>
+
+<main>
+  <section class="hero">
+    <div>
+      <div class="tag"><span>Integration</span><span>Robotics</span><span>Security</span></div>
+      <h1>I make complex systems feel simple for the people using them.</h1>
+      <p class="sub">Robotics engineer and security-focused builder who believes great technology should feel effortless — whether you're controlling a robot, checking a sensor, or reviewing a log.</p>
+      <div class="btns">
+        <a class="primary" href="#contact">Send a message</a>
+        <a class="secondary" href="https://github.com/Kirstenumali">GitHub</a>
+        <a class="secondary" href="https://linkedin.com/in/kirstenumali">LinkedIn</a>
+      </div>
+    </div>
+    <div class="hero-visual">
+      <img src="assets/pepper.png" alt="Robotics workspace">
+      <img src="assets/0d9b394f-d621-435e-b591-cf380a61c755.JPG" alt="Robotics workspace">
+    </div>
+  </section>
+
+  <section class="stats">
+    <article><span>01</span><strong>Robotics</strong><p>Android apps, sensors, ROS, robot platform deployment</p></article>
+    <article><span>02</span><strong>Integration</strong><p>REST APIs, backend communication, test validation</p></article>
+    <article><span>03</span><strong>Security</strong><p>Wireshark, Nmap, PGP, VeraCrypt, protocol analysis</p></article>
+  </section>
+
+  <section class="section" id="skills">
+    <div class="section-inner">
+      <div class="eyebrow">Technical Range</div>
+      <h2>A practical mix of code, hardware, security, and curiosity.</h2>
+      <div class="skill-grid">
+        <div class="skill-card"><h3>Programming</h3><p>C/C++, Java, Kotlin, React, SQL, Python, JavaScript, Bash, PowerShell</p></div>
+        <div class="skill-card"><h3>Robotics &amp; Embedded</h3><p>ROS, ESP32, Android OS, sensor integration, robotics prototyping, hardware-software communication</p></div>
+        <div class="skill-card"><h3>Mobile &amp; Backend</h3><p>Android Studio, REST APIs, Retrofit, OkHttp, Node.js, Express.js, MongoDB, Strapi</p></div>
+        <div class="skill-card"><h3>Testing &amp; Analysis</h3><p>Linux, Ubuntu, Git, Postman, Wireshark, Nmap, protocol analysis, log analysis, bug fixing</p></div>
+      </div>
+    </div>
+  </section>
+
+  <div class="marble-div"></div>
+
+  <section class="section" id="snapshots">
+    <div class="section-inner">
+      <div class="eyebrow">Work Snapshots</div>
+      <h2>A closer look at the kind of work I enjoy doing.</h2>
+    </div>
+    <div class="snap-strip">
+      <div class="snap-track">
+        <figure><img src="assets/android.png" alt="Android robot-control"></figure>
+        <figure><img src="assets/robotics.jpg" alt="Robotics"></figure>
+        <figure><img src="assets/security.png" alt="Security"></figure>
+        <figure><img src="assets/intruder.jpg" alt="Intruder"></figure>
+        <figure><img src="assets/fujairah_robot.jpg" alt="Fujairah"></figure>
+        <figure><img src="assets/hardwar.jpg" alt="Hardware"></figure>
+        <figure><img src="assets/android.png" alt="Android"></figure>
+        <figure><img src="assets/djablo.jpg" alt="DJablo"></figure>
+        <figure><img src="assets/integration-hero.png" alt="Integration"></figure>
+        <figure><img src="assets/photo_2026-11-03_09-06-18.jpg" alt="photoframe"></figure>
+        <figure><img src="assets/photo_2026-11-03_09-27-05.jpg" alt="photoframe"></figure>
+      </div>
+    </div>
+  </section>
+
+  <div class="marble-div"></div>
+
+  <section class="section" id="tools">
+    <div class="section-inner">
+      <div class="eyebrow">What I Work With</div>
+      <h2>Tools, platforms, and environments I use regularly.</h2>
+      <div class="tool-grid">
+        <div class="tool-card"><h3>Backend and API connections</h3><p>I like making apps, devices, and backend services communicate clearly, especially when authentication and data flow matter.</p></div>
+        <div class="tool-card"><h3>Android and robot UI work</h3><p>I enjoy building interfaces that make robot systems easier to monitor, test, and use in real environments.</p></div>
+        <div class="tool-card"><h3>Security-aware troubleshooting</h3><p>I use logs, protocol checks, Wireshark, Nmap, and careful testing to understand what is happening inside a system.</p></div>
+        <div class="tool-card"><h3>Robotics and embedded systems</h3><p>I like the hands-on side: sensors, ESP32, ROS, Linux environments, and hardware-software communication.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <div class="marble-div"></div>
+
+  <section class="section">
+    <div class="section-inner">
+      <div class="eyebrow">Cybersecurity Focus</div>
+      <h2>Security is part of how I think, not just a separate checklist.</h2>
+      <div class="sec-grid">
+        <div class="sec-card"><h3>Network &amp; protocol analysis</h3><p>Comfortable using Wireshark, Nmap, protocol inspection, and log analysis to understand system behavior and troubleshoot issues.</p></div>
+        <div class="sec-card"><h3>Secure application flows</h3><p>Experience around authentication, Google API services, Apple Sign-In, API testing, and safer backend communication patterns.</p></div>
+        <div class="sec-card"><h3>Cybersecurity academic base</h3><p>Bachelor's in Cybersecurity with focus on ethical hacking, encryption concepts, PGP, VeraCrypt, and secure systems thinking.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <div class="marble-div"></div>
+
+  <section class="section" id="work">
+    <div class="section-inner">
+      <div class="eyebrow">Selected Work</div>
+      <h2>Real projects, real devices, and a lot of careful problem solving.</h2>
+      <div class="work-grid">
+        <div class="work-card"><span class="tag">Robotics Deployment</span><h3>Robot platform apps for service environments</h3><p>Developed and optimized Android and Node.js experiences for robotics platforms used in retail, aviation, hotel, and service-industry contexts.</p></div>
+        <div class="work-card"><span class="tag">Connected Devices</span><h3>ESP32 smart device integration</h3><p>Built hardware-software communication flows for IoT systems, including backend authentication with Google API services and Apple Sign-In.</p></div>
+        <div class="work-card"><span class="tag">Security &amp; Research</span><h3>Firmware and network analysis proof-of-concepts</h3><p>Used Wireshark and Nmap to analyze protocols, support reverse-engineering efforts, and validate technical proof-of-concept programs.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <div class="marble-div"></div>
+
+  <section class="section" id="experience">
+    <div class="section-inner">
+      <div class="eyebrow">Experience</div>
+      <h2>Growing through hands-on teams, client work, and robot deployments.</h2>
+      <div class="timeline-wrap">
+        <div class="timeline">
+          <div class="tl-item"><div class="tl-date">2025</div><div><h3>Robotics Engineer Intern · Action to Action Robotics</h3><p>Built Android applications for robotics control, improved UI experiences, supported robot deployment, and earned a full-time offer after the internship.</p></div></div>
+          <div class="tl-item"><div class="tl-date">2025</div><div><h3>Technical Engineer · MAXimuz Technology</h3><p>Supported robotics and embedded system integration, ported functional test programs across hardware variants, validated bug fixes, and helped improve API code and functional coverage before releases.</p></div></div>
+          <div class="tl-item"><div class="tl-date">2025</div><div><h3>Robotics Engineer · Robo Barista</h3><p>Conducted integration testing for robotic coffee machine systems, maintained machine documentation, and developed Android applications for embedded system monitoring and integration.</p></div></div>
+          <div class="tl-item"><div class="tl-date">2026</div><div><h3>Senior Robotics Engineer · Action to Action Robotics</h3><p>Robotics software development with Java, Kotlin, Android Studio, Retrofit, Node.js, MongoDB, ROS, Linux, Wireshark, API testing tools, and Git.</p></div></div>
+          <div class="tl-item"><div class="tl-date">2026</div><div><h3>Integration Engineer · German Cyber-Systems</h3><p>Freelance integration work covering ESP32 smart devices, backend services, secure sign-in flows, API integration, system testing, debugging, and validation.</p></div></div>
+          <div class="tl-item"><div class="tl-date">2026</div><div><h3>Cyber Security Engineer Intern · German Cyber-Systems</h3><p>Designed the Nordic Home prototype in Figma, created encryption education material using PGP and VeraCrypt, developed React applications, and coordinated technical work as a senior technical lead.</p></div></div>
+        </div>
+        <div class="edu-panel">
+          <div class="eyebrow">Education</div>
+          <h2>Cybersecurity studies with a builder's mindset.</h2>
+          <p>Bachelors in Cybersecurity at Paris American International University, specializing in cybersecurity and ethical hacking. High School Diploma from De La Salle University.</p>
+          <div style="margin-top:20px"><div class="eyebrow">Certifications</div>
+          <div class="cert-row" style="margin-top:8px">
+            <span class="cert-chip">IBM Core 1</span>
+            <span class="cert-chip">AWS AI Practitioner</span>
+            <span class="cert-chip">AWS SAA-C03</span>
+            <span class="cert-chip">IBM Core 2</span>
+            <span class="cert-chip">Google Cybersecurity</span>
+            <span class="cert-chip">Meta Android Dev</span>
+          </div>
+          <div class="eyebrow">Languages</div>
+          <p class="lang-text" style="margin-top:6px">English, Filipino, Arabic C1, German A1, Spanish A2</p></div>
+        </div>
+      </div>
+      <div class="exp-total"><a href="#experience">2 Years Experience &rarr;</a></div>
+    </div>
+  </section>
+
+  <div class="marble-div"></div>
+
+  <section class="section" id="contact">
+    <div class="section-inner">
+      <div class="eyebrow">Contact</div>
+      <h2>Have an idea, role, or project? Let's talk.</h2>
+      <div class="contact-wrap">
+        <div class="info">
+          <p>Based in Dubai and open to integration, robotics, embedded systems, cybersecurity, and software opportunities. I typically reply within a few hours.</p>
+        </div>
+        <form>
+          <label>Name <input name="name" type="text" required></label>
+          <label>Email <input name="email" type="email" required></label>
+          <label>Message <textarea rows="4" required></textarea></label>
+          <button type="submit">Submit request</button>
+        </form>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer>&copy; <span id="year2"></span> Kirsten Umali &middot; Integration Engineer · Dubai, UAE</footer>
+
+<script>
+document.getElementById("year2").textContent = new Date().getFullYear();
+document.querySelectorAll('a[href^="#"]').forEach(a => {
+  a.addEventListener("click", e => {
+    e.preventDefault();
+    const el = document.querySelector(a.getAttribute("href"));
+    if (el) el.scrollIntoView({ behavior: "smooth" });
+  });
+});
+</script>
+</body>
+</html>

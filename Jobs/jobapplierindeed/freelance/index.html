@@ -1,0 +1,37 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="robots" content="noindex,nofollow">
+  <title>IT Project Communities | Kirsten Umali</title>
+  <link rel="stylesheet" href="style.css"><script src="app.js" defer></script>
+  <link rel="stylesheet" href="/tool-nav.css">
+</head>
+<body>
+<header><a class="brand" href="../">K/&gt; <span>Kirsten’s workbench</span></a><a href="../jobapplier/">Job Copilot ↗</a></header>
+<main>
+  <nav class="tool-nav" aria-label="Main menu"><a href="/">Portfolio</a><a href="/jobapplier/">Job Copilot</a><a href="/jobapplierindeed/">Indeed</a><a class="active" aria-current="page" href="/freelance/">Freelance Finder</a><a href="/cybersecurityjobs/">Cybersecurity</a><a href="/internationalcompanies/">Global</a><a href="/bigcompaniesuae/">Big Companies UAE</a><a href="/internationeuropejobs/">Europe</a><a href="/biggersalary/">$100K+</a><a href="/contentcreatorbuilder/">Content Builder</a></nav>
+  <section class="hero"><p class="eyebrow">INFORMATION TECHNOLOGY / COMMUNITY TASKS</p><h1>Small IT tasks. <em>Useful connections.</em></h1><p>IT support, computer troubleshooting, networks, Microsoft 365, and Linux. Find communities and search for paid tasks in the Philippines, UAE, and worldwide.</p></section>
+  <div class="workspace">
+  <aside class="panel"><p class="eyebrow">01 / YOUR SEARCH</p><h2>What can you offer?</h2>
+    <form id="searchForm">
+      <label>IT work focus<select id="focus"><option value="support">IT support & troubleshooting</option><option value="desktop">Windows & desktop support</option><option value="network">Wi-Fi & network troubleshooting</option><option value="m365">Microsoft 365 & email support</option><option value="linux">Linux troubleshooting</option><option value="documentation">IT documentation & guides</option><option value="automation">PowerShell & IT automation</option><option value="security">Cybersecurity / log analysis</option></select></label>
+      <label>Additional search keywords<input id="keywords" placeholder="e.g. junior, ticket support, Wireshark"></label>
+      <button type="submit">Update community searches ↗</button>
+    </form>
+    <div class="fit-guide"><strong id="effort"></strong><p id="fitText"></p></div>
+  </aside>
+  <section class="results"><div class="section-heading"><div><p class="eyebrow">02 / FIND YOUR COMMUNITY</p><h2>Groups & project posts</h2></div><span class="pill">Communities + discovery searches</span></div>
+    <p id="searchSummary" class="muted" aria-live="polite"></p><p id="taskExamples" class="task-examples"></p><div id="links" class="cards"></div>
+    <details class="note"><summary>How to find a paid task inside a group</summary><p>Read the group rules, then search for “paid”, “hiring”, “need help”, “IT support”, “testing”, or “project”. Hiring posts are from clients; “for hire” posts are people offering their services. Ask for the task, budget, deadline, and required hours before agreeing. Community membership does not guarantee paid work.</p></details>
+  </section></div>
+  <details class="panel proposal"><summary>03 / Proposal helper — open when you’re ready to apply</summary><div class="section-heading"><div><h2>A proposal in your own experience.</h2></div><span class="pill">Editable template · no AI service</span></div>
+  <p class="muted">Prefilled from your portfolio. Edit the evidence to match this project; the generator uses only what you provide.</p>
+  <form id="proposalForm" class="proposal-grid">
+    <div><label>Client or company (optional)<input id="client" maxlength="150" placeholder="Client name"></label><label>Project title<input id="project" maxlength="200" required placeholder="e.g. Troubleshoot a Linux application issue"></label><label>What does the client need?<textarea id="need" required rows="3" placeholder="Paste a short summary of the task"></textarea></label><label>Your relevant experience<textarea id="experience" required rows="4"></textarea></label></div>
+    <div><label>First step you can offer<input id="step" required></label><label>Your actual availability<input id="availability" required value="Flexible weekday availability; exact hours and milestones to be agreed before starting."></label><label>Question to ask the client<input id="question" required value="Could you share the current issue, expected outcome, and target deadline?"></label><button type="submit">Generate my proposal</button><p class="hint">Review before sending. This tool does not contact clients or submit applications. Profile edits stay in this browser when storage is available.</p></div>
+  </form>
+  <label class="output-label">Your draft<textarea id="output" rows="13" placeholder="Your proposal will appear here. You can edit it before copying."></textarea></label><div class="copy-row"><button id="copy" type="button" class="secondary">Copy proposal</button><span id="status" role="status"></span></div>
+  </details>
+  <footer>Small scope. Clear milestones. Work that fits your week.<a href="../">Back to portfolio ↑</a></footer>
+</main></body></html>

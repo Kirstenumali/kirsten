@@ -1,0 +1,37 @@
+header,
+main {
+  width: 100%;
+  max-width: none;
+  padding-inline: clamp(16px, 2vw, 40px);
+}
+
+#scope-form {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 18px 24px;
+}
+
+#scope-form > * {
+  min-width: 0;
+  margin: 0;
+}
+
+#scope-form > label:nth-of-type(-n + 3),
+#scope-form > p,
+#scope-form > button {
+  grid-column: 1 / -1;
+}
+
+#scope-form textarea {
+  min-height: 120px;
+}
+
+#results {
+  overflow-wrap: anywhere;
+}
+
+@media (max-width: 1000px) {
+  #scope-form {
+    grid-template-columns: 1fr;
+  }
+}

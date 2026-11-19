@@ -1,0 +1,51 @@
+<!doctype html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="robots" content="noindex,nofollow">
+  <meta name="description" content="Major UAE and global employers aligned with Kirsten Umali's integration, robotics, mobile, IoT, cloud, and cybersecurity background.">
+  <title>Big Companies | Kirsten Umali</title>
+  <link rel="stylesheet" href="../internationalcompanies/style.css">
+  <link rel="stylesheet" href="/tool-nav.css">
+  <link rel="stylesheet" href="./style.css">
+  <link rel="stylesheet" href="../link-history.css">
+</head>
+<body>
+  <main class="shell">
+    <header class="topbar">
+      <a class="brand" href="/">K/&gt; <span>Big Companies</span></a>
+      <a class="back" href="/jobapplier/">Job Copilot ↗</a>
+    </header>
+    <nav class="tool-nav" aria-label="Main menu"><a href="/">Portfolio</a><a href="/jobapplier/">Job Copilot</a><a href="/jobapplierindeed/">Indeed</a><a href="/cybersecurityjobs/">Cybersecurity</a><a href="/internationalcompanies/">Global</a><a class="active" aria-current="page" href="/bigcompanies/">Big Companies</a><a href="/internationeuropejobs/">Europe</a><a href="/biggersalary/">$100K+</a><a href="/contentcreatorbuilder/">Content Builder</a></nav>
+
+    <section class="hero">
+      <p class="eyebrow">Target-company shortlist</p>
+      <h1>Big teams.<br><em>Real technical fit.</em></h1>
+      <p>Explore major employers in the UAE first, then global companies where your integration, robotics, Android, API, IoT, Linux, cloud, and cybersecurity skills are relevant.</p>
+      <div class="search-row"><input id="search" type="search" placeholder="Filter by company, skill, or focus"><a id="linkedinSearch" class="button" href="https://www.linkedin.com/jobs/search/?keywords=integration%20engineer&location=United%20Arab%20Emirates" target="_blank" rel="noopener">Search LinkedIn jobs ↗</a></div>
+      <div class="refresh-row"><button id="refresh" type="button">Refresh last 24 hours</button><span id="refreshStatus" aria-live="polite">Showing all current LinkedIn results.</span></div>
+    </section>
+
+    <section class="principle"><strong>How to use this:</strong><span>Each card opens a LinkedIn company search, where you can review current openings and apply. Fit scores are only a starting point—read each job’s requirements and work-authorization terms.</span></section>
+
+    <section class="live-feed panel" aria-labelledby="liveFeedTitle"><div><p class="eyebrow">Priority live jobs</p><h2 id="liveFeedTitle">IT roles you can apply to now</h2><p id="feedStatus">Loading technical openings from verified official career feeds…</p></div><div id="liveJobs" class="live-jobs" aria-live="polite"></div></section>
+
+    <section class="toolbar">
+      <div class="filters" role="group" aria-label="Company location"><button class="filter active" data-filter="all" type="button">All</button><button class="filter" data-filter="uae" type="button">UAE priority</button><button class="filter" data-filter="cyber" type="button">Cybersecurity</button><button class="filter" data-filter="systems" type="button">Systems & IoT</button><button class="filter" data-filter="cloud" type="button">Cloud & APIs</button></div>
+      <p id="resultCount" aria-live="polite"></p>
+    </section>
+
+    <section id="companyList" class="company-grid" aria-label="Target companies"></section>
+
+    <section class="footer-note">
+      <p class="eyebrow">Apply thoughtfully</p>
+      <h2>Use LinkedIn for discovery, then verify the employer source.</h2>
+      <p>Company hiring needs change quickly. Use the official careers link to confirm a role is live, tailored to your experience level, and open to your location.</p>
+      <span id="updated"></span>
+    </section>
+  </main>
+  <script src="./app.js"></script>
+  <script src="../link-history.js"></script>
+</body>
+</html>

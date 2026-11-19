@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://kirstenumali.online/sitemap.xml

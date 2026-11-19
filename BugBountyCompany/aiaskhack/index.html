@@ -1,0 +1,154 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="robots" content="noindex, nofollow">
+    <title>AI scope helper · Team workspace</title>
+    <link rel="stylesheet" href="/bugbountycompany/style.css">
+    <link rel="stylesheet" href="/bounty-shared/style.css">
+    <link rel="stylesheet" href="/aiaskhack/style.css">
+    <script src="/bounty-shared/app.js" defer></script>
+    <script src="/aiaskhack/app.js" defer></script>
+  </head>
+  <body>
+    <header>
+      <a id="dashboard-link" href="/bugbountycompany/users/">← Team workspace</a>
+      <span class="header-note">SCOPE HELPER</span>
+    </header>
+
+    <main>
+      <nav class="bounty-nav">
+        <a href="/bigbountyapis/" data-bounty-nav>Discover programs</a>
+        <a href="/bigbountyrooms/" data-bounty-nav>Shared rooms</a>
+        <a href="/aiaskhack/" data-bounty-nav aria-current="page">AI scope helper</a>
+      </nav>
+
+      <section class="bounty-hero">
+        <p class="eyebrow">PASTE THE SCOPE. PLAN YOUR RESEARCH.</p>
+        <h1>Understand the scope.<br><em>Choose where to start.</em></h1>
+        <p class="muted">
+          Add the program links and paste its scope, rules, eligibility, and
+          disclosure guidance. Get a prioritized plan with tools and steps to
+          review with your researcher.
+        </p>
+      </section>
+
+      <p id="helper-mode" class="bounty-notice" role="status">
+        Sign in to use the scope helper.
+      </p>
+      <p id="signin" hidden>
+        <a id="signin-link" href="/bugbountycompany/users/">Sign in to continue →</a>
+      </p>
+
+      <form id="scope-form" class="panel" hidden>
+        <label>
+          Program scope links (optional; up to 50 URLs, one per line)
+          <textarea
+            id="scope-links"
+            name="scopeLinks"
+            rows="3"
+            maxlength="5000"
+            aria-describedby="scope-links-help scope-links-error"
+            placeholder="https://example.com/security&#10;https://example.com/scope"
+          ></textarea>
+        </label>
+        <p id="scope-links-help" class="small muted">
+          Links are used only for this request and are not opened automatically.
+          All 50 links can be included. Paste relevant page text below if you
+          want it analyzed; links are not fetched automatically.
+        </p>
+        <p id="scope-links-error" class="small" role="alert" hidden></p>
+        <label>
+          Program scope and eligible assets
+          <textarea
+            name="scope"
+            id="scope-text"
+            rows="12"
+            minlength="30"
+            maxlength="20000"
+            required
+            placeholder="In scope:&#10;Eligible assets:&#10;Out of scope:&#10;…"
+          ></textarea>
+        </label>
+        <label>
+          Focus area (optional)
+          <input
+            id="focus-area"
+            name="focusArea"
+            maxlength="2000"
+            placeholder="e.g. Reentrancy, order settlement, authorization"
+          >
+        </label>
+        <label>
+          Program rules
+          <textarea
+            id="program-rules"
+            name="programRules"
+            rows="5"
+            maxlength="8000"
+            placeholder="Testing limits, prohibited actions, test-account requirements, and other rules"
+          ></textarea>
+        </label>
+        <label>
+          Eligibility and coordinated disclosure
+          <textarea
+            id="eligibility"
+            name="eligibility"
+            rows="5"
+            maxlength="8000"
+            placeholder="Who may participate, eligible assets or versions, safe harbor, and how disclosure is coordinated"
+          ></textarea>
+        </label>
+        <label>
+          Disclosure guidelines (paste the AIHack program guidance)
+          <textarea
+            id="disclosure-guidelines"
+            name="disclosureGuidelines"
+            rows="5"
+            maxlength="8000"
+            placeholder="Reporting channel, required evidence, response timelines, privacy rules, and publication guidance"
+          ></textarea>
+        </label>
+        <p class="small muted" id="scope-privacy">
+          Add all available program details for a more complete draft. Your
+          submission is not saved to your account. No scans or target requests
+          are performed.
+        </p>
+        <button id="suggest">Build my research plan</button>
+      </form>
+
+      <p id="status" role="status" aria-live="polite"></p>
+
+      <section id="results" hidden>
+        <div class="section-heading">
+          <h2>Your scope-aware research plan</h2>
+          <button id="copy-plan" type="button" class="secondary">Copy plan</button>
+        </div>
+        <p id="result-mode" class="badge"></p>
+        <p id="plan-readiness" class="bounty-notice"></p>
+        <p id="scope-summary"></p>
+
+        <section class="panel bounty-section">
+          <h2>Guide before you begin</h2>
+          <ul id="scope-guidance"></ul>
+        </section>
+        <div id="scope-suggestions"></div>
+        <details class="panel bounty-section">
+          <summary>Program links provided (not opened)</summary>
+          <ul id="scope-links-provided"></ul>
+        </details>
+        <details class="panel bounty-section">
+          <summary>Assets &amp; scope boundaries</summary>
+          <ul id="scope-assets"></ul>
+        </details>
+
+        <section class="panel" style="margin-top: 22px">
+          <h2>Questions for your researcher</h2>
+          <ul id="scope-questions"></ul>
+          <a id="approval-link" href="/easybugs/">Ask for researcher approval →</a>
+        </section>
+      </section>
+    </main>
+  </body>
+</html>

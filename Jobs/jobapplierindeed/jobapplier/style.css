@@ -1,0 +1,79 @@
+:root{--bg:#0e1b21;--panel:#152931;--text:#edf7f8;--muted:#a9bbc2;--line:rgba(185,220,225,.13);--accent:#59d7d2;--gold:#f0b84d;--coral:#ff9478;--shadow:0 20px 50px rgba(0,0,0,.22);font-family:Inter,ui-sans-serif,system-ui,sans-serif;color:var(--text);background:var(--bg)}
+:root[data-theme="light"]{--bg:#f4f8f7;--panel:#fff;--text:#17323c;--muted:#5d727a;--line:rgba(20,64,75,.15);--accent:#087d7d;--gold:#b67818;--coral:#c55d43;--shadow:0 20px 50px rgba(20,64,75,.09)}
+*{box-sizing:border-box}
+body{margin:0;background:radial-gradient(circle at 84% 0,rgba(88,215,210,.13),transparent 26%),var(--bg);min-width:320px}
+.app-shell{max-width:none;margin:auto;padding:25px 28px 60px}
+.topbar{display:flex;justify-content:space-between;align-items:center;padding-bottom:36px}
+.brand{color:var(--text);font-weight:800;text-decoration:none;letter-spacing:.02em}
+.brand span{color:var(--muted);margin-left:8px;font-weight:600}
+.top-actions{display:flex;align-items:center;gap:16px}
+.date,.hint{color:var(--muted);font-size:.9rem}
+.icon-button,.close{background:transparent;border:1px solid var(--line);border-radius:9px;color:var(--text);cursor:pointer;font-size:1.2rem;padding:5px 9px}
+.hero{display:flex;align-items:end;justify-content:space-between;gap:26px;padding:35px 0 48px}
+.eyebrow{text-transform:uppercase;letter-spacing:.13em;font-size:.72rem;font-weight:800;color:var(--accent);margin:0 0 9px}
+.hero h1{font-size:clamp(2.5rem,6vw,5rem);line-height:1.02;letter-spacing:-.055em;margin:0}
+.hero h1 em{color:var(--gold);font-family:Georgia,serif;font-weight:400}
+.hero>div>p:last-child{color:var(--muted);max-width:610px;margin:18px 0 0;font-size:1.08rem}
+.hero-actions{display:flex;gap:10px;flex-wrap:wrap}
+.button{border:0;border-radius:8px;padding:11px 15px;cursor:pointer;font:inherit;font-weight:750;text-decoration:none;white-space:nowrap}
+.primary{background:var(--accent);color:#052225}
+.secondary{color:var(--text);background:transparent;border:1px solid var(--line)}
+.metrics{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin-bottom:20px}
+.metrics article,.panel,.job-card{background:var(--panel);border:1px solid var(--line);box-shadow:var(--shadow);border-radius:13px}
+.metrics article{padding:16px}
+.metrics span,.metrics small{display:block;color:var(--muted);font-size:.8rem}
+.metrics strong{display:block;font-size:1.75rem;line-height:1.25;margin:4px 0}
+.panel{padding:24px}
+.preferences{display:flex;gap:28px;align-items:center;margin:20px 0 42px}
+.preferences h2,.section-title h2,.workflow h2{margin:0;letter-spacing:-.03em}
+.preferences-form{display:grid;grid-template-columns:2fr 1.3fr 1.6fr .8fr auto;gap:10px;align-items:end;flex:1}
+.preferences label,dialog label{font-size:.78rem;font-weight:700;color:var(--muted)}
+input,select{display:block;width:100%;margin-top:5px;border:1px solid var(--line);border-radius:7px;padding:10px;background:transparent;color:var(--text);font:inherit}
+.content-grid{display:grid;grid-template-columns:minmax(0,1.85fr) minmax(250px,.8fr);gap:20px}
+.section-title{display:flex;justify-content:space-between;align-items:end;gap:14px;margin:0 0 14px}
+.job-list{display:grid;gap:12px}
+.job-card{padding:20px;position:relative;overflow:hidden}
+.job-card:before{content:"";position:absolute;left:0;top:0;bottom:0;width:4px;background:var(--accent)}
+.job-top{display:flex;justify-content:space-between;gap:14px}
+.job-card h3{margin:0;font-size:1.15rem}
+.company,.job-meta,.job-reason{color:var(--muted);margin:.15rem 0}
+.job-reason{font-size:.9rem}
+.match{color:#062427;background:var(--accent);border-radius:99px;display:inline-flex;height:38px;min-width:48px;align-items:center;justify-content:center;font-weight:900}
+.card-footer{display:flex;justify-content:space-between;gap:8px;margin-top:15px;align-items:center}
+.job-link{color:var(--accent);font-weight:750;text-decoration:none}
+.workflow ol{padding:0;margin:20px 0;list-style:none;counter-reset:step}
+.workflow li{display:grid;grid-template-columns:28px 1fr;gap:7px;margin:15px 0;color:var(--muted);font-size:.92rem}
+.workflow li:before{counter-increment:step;content:counter(step);color:var(--gold);font-weight:900}
+.workflow b{color:var(--text);display:block}
+.notice{font-size:.82rem;color:var(--muted);border-top:1px solid var(--line);padding-top:16px}
+.tracker{margin-top:20px}
+.tracker-scroll{overflow-x:auto}
+table{border-collapse:collapse;width:100%;min-width:650px}
+th,td{text-align:left;border-bottom:1px solid var(--line);padding:14px 8px;font-size:.9rem}
+th{color:var(--muted);font-size:.75rem;text-transform:uppercase;letter-spacing:.08em}
+.stage{border:1px solid var(--line);border-radius:99px;padding:4px 8px;font-size:.78rem}
+.delete{color:var(--coral);background:transparent;border:0;cursor:pointer}
+dialog{width:min(480px,calc(100% - 32px));border:1px solid var(--line);border-radius:14px;background:var(--panel);color:var(--text);box-shadow:var(--shadow);padding:24px}
+dialog::backdrop{background:rgba(0,0,0,.55)}
+dialog form{display:grid;gap:13px}
+.dialog-heading{display:flex;justify-content:space-between;align-items:start}
+.dialog-heading h2{margin:0}
+.toast{position:fixed;bottom:22px;left:50%;transform:translateX(-50%) translateY(90px);background:var(--text);color:var(--bg);padding:11px 16px;border-radius:8px;font-weight:700;transition:transform .2s}
+.toast.show{transform:translateX(-50%) translateY(0)}
+@media(max-width:900px){.preferences,.hero{align-items:start;flex-direction:column}
+.preferences-form{width:100%;grid-template-columns:1fr 1fr}
+.content-grid{grid-template-columns:1fr}
+.metrics{grid-template-columns:repeat(2,1fr)}
+}
+@media(max-width:560px){.app-shell{padding:18px}
+.topbar{padding-bottom:25px}
+.date{display:none}
+.preferences-form{grid-template-columns:1fr}
+.section-title{align-items:start;flex-direction:column}
+.card-footer{align-items:start;flex-direction:column}
+.hero{padding:20px 0 36px}
+}
+select{background-color:var(--panel)!important;color:var(--text)!important;color-scheme:dark}
+select option{background-color:var(--panel)!important;color:var(--text)!important}
+:root[data-theme="light"] select{color-scheme:light}
+

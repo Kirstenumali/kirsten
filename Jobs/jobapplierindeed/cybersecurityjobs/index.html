@@ -1,0 +1,179 @@
+<!doctype html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="robots" content="noindex,nofollow">
+  <meta name="description" content="A focused cybersecurity job-search dashboard tailored to Kirsten Umali's security, integration, and systems experience.">
+  <title>Cybersecurity Job Copilot | Kirsten Umali</title>
+  <link rel="stylesheet" href="../jobapplier/style.css">
+  <link rel="stylesheet" href="/tool-nav.css"></head>
+<body>
+  <main class="app-shell">
+    <header class="topbar">
+      <a class="brand" href="/">K/&gt; <span>Cybersecurity Job Copilot</span>
+</a>
+      <div class="top-actions">
+<span id="today" class="date">
+</span>
+<button id="themeToggle" class="icon-button" type="button" aria-label="Toggle theme">◐</button>
+</div>
+    </header>
+    <nav class="tool-nav" aria-label="Main menu"><a href="/">Portfolio</a><a href="/jobapplier/">Job Copilot</a><a href="/jobapplierindeed/">Indeed</a><a class="active" aria-current="page" href="/cybersecurityjobs/">Cybersecurity</a><a href="/internationalcompanies/">Global</a><a href="/bigcompaniesuae/">Big Companies UAE</a><a href="/internationeuropejobs/">Europe</a><a href="/biggersalary/">$100K+</a><a href="/contentcreatorbuilder/">Content Builder</a></nav>
+
+    <section class="hero">
+      <div>
+<p class="eyebrow">Security career system</p>
+<h1>Five relevant roles.<br>
+<em>One secure next step.</em>
+</h1>
+<p>Find, assess, tailor, and track cybersecurity opportunities that fit your hands-on experience in security, integration, networks, and real systems.</p>
+</div>
+      <div class="hero-actions">
+<button id="refreshJobs" class="button primary" type="button">Refresh today’s 5</button>
+<button id="sendDigest" class="button secondary" type="button">Send Telegram digest</button>
+</div>
+    </section>
+
+    <section class="metrics" aria-label="Cybersecurity job-search progress">
+      <article>
+<span>Today</span>
+<strong id="todayCount">5</strong>
+<small>roles to review</small>
+</article>
+      <article>
+<span>Pipeline</span>
+<strong id="pipelineCount">0</strong>
+<small>active applications</small>
+</article>
+      <article>
+<span>Follow-ups</span>
+<strong id="followUpCount">0</strong>
+<small>need attention</small>
+</article>
+      <article>
+<span>Weekly goal</span>
+<strong id="goalCount">0 / 8</strong>
+<small>applications sent</small>
+</article>
+    </section>
+
+    <section class="preferences panel" aria-labelledby="preferencesTitle">
+      <div>
+<p class="eyebrow">Search profile</p>
+<h2 id="preferencesTitle">Your security compass</h2>
+</div>
+      <form id="preferencesForm" class="preferences-form">
+        <label>Target roles<input name="roles" placeholder="e.g. SOC Analyst, Security Engineer">
+</label>
+        <label>Location<input name="location" placeholder="Dubai, UAE · Remote">
+</label>
+        <label>Keywords<input name="keywords" placeholder="Wireshark, Nmap, API security">
+</label>
+        <label>Minimum match<select name="minimum">
+<option value="70">70%</option>
+<option value="75" selected>75%</option>
+<option value="80">80%</option>
+</select>
+</label>
+        <button class="button secondary" type="submit">Save profile</button>
+      </form>
+    </section>
+
+    <section class="content-grid">
+      <section aria-labelledby="shortlistTitle">
+<div class="section-title">
+<div>
+<p class="eyebrow">Today’s shortlist</p>
+<h2 id="shortlistTitle">Roles worth investigating</h2>
+</div>
+<span class="hint">Curated demo data — always verify the original posting</span>
+</div>
+<div id="jobList" class="job-list">
+</div>
+</section>
+      <aside class="panel workflow">
+<p class="eyebrow">Your workflow</p>
+<h2>Evidence first, then apply.</h2>
+<ol>
+<li>
+<b>Investigate</b>
+<span>Read the original posting and confirm the company, scope, and seniority.</span>
+</li>
+<li>
+<b>Map your evidence</b>
+<span>Match security, network, API, and integration work to the role.</span>
+</li>
+<li>
+<b>Tailor</b>
+<span>Focus your CV on practical systems thinking and relevant tools.</span>
+</li>
+<li>
+<b>Follow up</b>
+<span>Set a reminder seven days after a submitted application.</span>
+</li>
+</ol>
+<p class="notice">This dashboard is for organizing your search. It never logs in or submits applications for you.</p>
+</aside>
+    </section>
+
+    <section class="panel tracker" aria-labelledby="trackerTitle">
+<div class="section-title">
+<div>
+<p class="eyebrow">Application tracker</p>
+<h2 id="trackerTitle">Keep your security search visible</h2>
+</div>
+<button id="addApplication" class="button secondary" type="button">Add application</button>
+</div>
+<div class="tracker-scroll">
+<table>
+<thead>
+<tr>
+<th>Company &amp; role</th>
+<th>Stage</th>
+<th>Applied</th>
+<th>Follow up</th>
+<th>
+</th>
+</tr>
+</thead>
+<tbody id="applicationList">
+</tbody>
+</table>
+</div>
+</section>
+  </main>
+  <dialog id="applicationDialog">
+<form id="applicationForm" method="dialog">
+<div class="dialog-heading">
+<div>
+<p class="eyebrow">Add to pipeline</p>
+<h2>Track an application</h2>
+</div>
+<button class="close" value="cancel" aria-label="Close">×</button>
+</div>
+<label>Company<input name="company" required>
+</label>
+<label>Role<input name="title" required>
+</label>
+<label>Stage<select name="stage">
+<option>Saved</option>
+<option>Applied</option>
+<option>Interview</option>
+<option>Offer</option>
+<option>Closed</option>
+</select>
+</label>
+<label>Applied date<input name="applied" type="date">
+</label>
+<label>Follow-up date<input name="followUp" type="date">
+</label>
+<button class="button primary" value="default">Save application</button>
+</form>
+</dialog>
+  <div id="toast" class="toast" role="status" aria-live="polite">
+</div>
+  <script src="./app.js">
+</script>
+</body>
+</html>

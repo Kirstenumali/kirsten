@@ -1,0 +1,115 @@
+<!doctype html>
+<html lang="en" data-theme="dark">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="robots" content="noindex,nofollow">
+<title>Content Creator Builder | Kirsten Umali</title>
+<link rel="stylesheet" href="./style.css">
+<link rel="stylesheet" href="/tool-nav.css"></head>
+<body>
+<main class="shell">
+<header>
+<a class="brand" href="/">K/&gt; <span>Content Creator Builder</span>
+</a>
+<a href="/">Portfolio ↗</a>
+</header>
+<nav class="tool-nav" aria-label="Main menu"><a href="/">Portfolio</a><a href="/jobapplier/">Job Copilot</a><a href="/jobapplierindeed/">Indeed</a><a href="/cybersecurityjobs/">Cybersecurity</a><a href="/internationalcompanies/">Global</a><a href="/bigcompaniesuae/">Big Companies UAE</a><a href="/internationeuropejobs/">Europe</a><a href="/biggersalary/">$100K+</a><a class="active" aria-current="page" href="/contentcreatorbuilder/">Content Builder</a></nav>
+<section class="hero">
+<p class="eyebrow">Your technical content studio</p>
+<h1>Turn your work<br>into <em>useful stories.</em>
+</h1>
+<p>Generate grounded IT content from your real skills and the context you choose to share. Nothing is published automatically.</p>
+</section>
+<section class="panel profile">
+<div>
+<p class="eyebrow">Creator profile</p>
+<h2>What should your content sound like?</h2>
+<p>These are editable professional themes, not assumptions about your private life.</p>
+</div>
+<div class="profile-fields">
+<label>Role<input id="role" value="Integration Engineer">
+</label>
+<label>Location<input id="location" value="Dubai, UAE">
+</label>
+<label>Skill themes<input id="skills" value="Robotics, Android, APIs, IoT, Linux, Cybersecurity">
+</label>
+</div>
+</section>
+<section class="builder">
+<section class="panel controls">
+<p class="eyebrow">Build a post</p>
+<h2>Choose your direction</h2>
+<div class="form-grid">
+<label>Format<select id="format">
+<option>LinkedIn post</option>
+<option>Instagram caption</option>
+<option>Carousel outline</option>
+<option>No-voice reel storyboard</option>
+<option>Technical thread</option>
+</select>
+</label>
+<label>Tone<select id="tone">
+<option>Professional and clear</option>
+<option>Educational</option>
+<option>Builder’s journal</option>
+<option>Investor-minded</option>
+</select>
+</label>
+<label>Content pillar<select id="pillar">
+<option>Robotics</option>
+<option>Android</option>
+<option>APIs & integration</option>
+<option>IoT & embedded</option>
+<option>Cybersecurity</option>
+<option>Career growth</option>
+</select>
+</label>
+</div>
+<label class="context">Topic, question, or point of view <span>(optional)</span><textarea id="context" placeholder="Example: Why API authentication fails during integration testing — or leave this blank and choose an idea below.">
+</textarea>
+</label>
+<p class="context-help">You do not need a daily update. Start with a question, an observation, a lesson you want to explain, or one of these directions.</p>
+<div class="idea-chips" aria-label="Suggested content directions"><button type="button" data-idea="A technical myth I would challenge">Challenge a myth</button><button type="button" data-idea="A practical checklist for avoiding a common mistake">Share a checklist</button><button type="button" data-idea="One trade-off worth explaining to a non-technical audience">Explain a trade-off</button><button type="button" data-idea="A useful beginner question in this field">Teach a beginner</button></div>
+<div id="reelSettings" class="reel-settings" hidden><label>Footage you can actually use<select id="footage"><option value="screen">Screen recordings / screenshots</option><option value="desk">Desk, device, or workbench clips</option><option value="mixed">A mix of screen and practical clips</option></select></label><p>Each storyboard is built from simple clips you can genuinely capture—no fake meetings, dashboards, or results.</p></div>
+<div class="actions">
+<button id="generate" class="button primary" type="button">Generate a draft</button>
+<button id="random" class="button secondary" type="button">Random idea</button>
+</div>
+</section>
+<section class="panel output">
+<div class="output-head">
+<div>
+<p class="eyebrow">Your draft</p>
+<h2 id="draftTitle">Ready when you are.</h2>
+</div>
+<span id="draftTag">LOCAL</span>
+</div>
+<div id="draft" class="draft">
+<p>Choose a format and content pillar, add a real-world note if you have one, then generate a thoughtful draft.</p>
+</div>
+<div class="output-actions">
+<button id="copy" class="button secondary" type="button">Copy draft</button>
+<button id="save" class="button secondary" type="button">Save draft</button>
+</div>
+</section>
+</section>
+<section class="panel saved">
+<div class="saved-head">
+<div>
+<p class="eyebrow">Draft library</p>
+<h2>Ideas worth returning to</h2>
+</div>
+<button id="clear" class="text-button" type="button">Clear saved</button>
+</div>
+<div id="savedList">
+<p class="muted">No saved drafts yet.</p>
+</div>
+</section>
+<div id="toast" role="status" aria-live="polite">
+</div>
+</main>
+<script src="./app.js">
+</script>
+</body>
+</html>

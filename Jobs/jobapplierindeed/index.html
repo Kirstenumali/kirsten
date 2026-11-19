@@ -1,0 +1,173 @@
+<!doctype html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="robots" content="noindex,nofollow">
+  <title>Indeed Job Copilot | Kirsten Umali</title>
+  <link rel="stylesheet" href="./style.css">
+  <style>.preferences .fields{grid-template-columns:1.6fr 1.2fr 1.45fr .75fr .75fr}@media(max-width:900px){.preferences .fields{grid-template-columns:1fr 1fr}}@media(max-width:560px){.preferences .fields{grid-template-columns:1fr}}</style>
+  <link rel="stylesheet" href="/tool-nav.css"></head>
+<body>
+  <main class="app-shell">
+    <header class="topbar">
+<a class="brand" href="/">K/&gt; <span>Indeed Job Copilot</span>
+</a>
+<a class="back" href="/jobapplier/">LinkedIn Copilot ↗</a>
+</header>
+    <nav class="tool-nav" aria-label="Main menu"><a href="/">Portfolio</a><a href="/jobapplier/">Job Copilot</a><a class="active" aria-current="page" href="/jobapplierindeed/">Indeed</a><a href="/freelance/">Freelance Finder</a><a href="/cybersecurityjobs/">Cybersecurity</a><a href="/internationalcompanies/">Global</a><a href="/bigcompaniesuae/">Big Companies UAE</a><a href="/internationeuropejobs/">Europe</a><a href="/biggersalary/">$100K+</a><a href="/contentcreatorbuilder/">Content Builder</a></nav>
+    <section class="hero">
+<div>
+<p class="eyebrow">Indeed-powered job discovery</p>
+<h1>Five fresh paths.<br>
+<em>One focused day.</em>
+</h1>
+<p>Use Indeed’s live results to find remote, hybrid, and international engineering opportunities—then tailor and submit each application yourself.</p>
+</div>
+<div class="hero-actions">
+<button id="refresh" class="button primary" type="button">Refresh past 24 hours</button>
+<a id="openSearch" class="button secondary" target="_blank" rel="noopener" href="#">Open Indeed search ↗</a>
+</div>
+</section>
+    <section class="metrics">
+<article>
+<span>Today</span>
+<strong>5</strong>
+<small>Indeed discovery lanes</small>
+</article>
+<article>
+<span>Focus</span>
+<strong id="bestMatch">—</strong>
+<small>highest personal match</small>
+</article>
+<article>
+<span>Work style</span>
+<strong id="modeMetric">Remote</strong>
+<small>current preference</small>
+</article>
+<article>
+<span>Updated</span>
+<strong id="updatedMetric">Now</strong>
+<small>search freshness</small>
+</article>
+</section>
+    <section class="panel preferences">
+<div>
+<p class="eyebrow">Search profile</p>
+<h2>Your Indeed search compass</h2>
+</div>
+<div class="fields">
+<label>Target roles<input id="roles" value="Integration Engineer, Robotics Engineer">
+</label>
+<label>Location<input id="location" value="United Arab Emirates" readonly aria-readonly="true">
+</label>
+<label>Skills<input id="skills" value="Android, ROS, APIs, IoT, Linux">
+</label>
+<label>Experience<select id="experience">
+<option value="2 years experience" selected>2+ years</option>
+</select>
+</label>
+<label>Work style<select id="workMode">
+<option value="remote">Remote</option>
+<option value="hybrid">Hybrid</option>
+<option value="both">Remote + hybrid</option>
+</select>
+</label>
+</div>
+</section>
+    <section class="content-grid">
+<section>
+<div class="section-title">
+<div>
+<p class="eyebrow">Today’s Indeed lanes</p>
+<h2>Search, verify, and choose.</h2>
+</div>
+<span class="hint">Personal fit score · live Indeed searches</span>
+</div>
+<div id="jobList" class="job-list">
+</div>
+</section>
+<aside class="panel workflow">
+<p class="eyebrow">Your workflow</p>
+<h2>Find the right role, deliberately.</h2>
+<ol>
+<li>
+<b>Open</b>
+<span>Review the current Indeed results and the original employer listing.</span>
+</li>
+<li>
+<b>Score</b>
+<span>Use the personal-fit percentage as a prioritization aid, not a guarantee.</span>
+</li>
+<li>
+<b>Tailor</b>
+<span>Adjust your CV and note for the specific role.</span>
+</li>
+<li>
+<b>Apply</b>
+<span>Submit manually and save the result in your tracker.</span>
+</li>
+</ol>
+<p class="notice">No automated Indeed login, scraping, or application submission.</p>
+</aside>
+</section>
+    <section class="panel tracker">
+<div class="section-title">
+<div>
+<p class="eyebrow">Application tracker</p>
+<h2>What you have acted on</h2>
+</div>
+<button id="addApplication" class="button secondary" type="button">Add application</button>
+</div>
+<div class="tracker-scroll">
+<table>
+<thead>
+<tr>
+<th>Company & role</th>
+<th>Stage</th>
+<th>Applied</th>
+<th>Follow up</th>
+<th>
+</th>
+</tr>
+</thead>
+<tbody id="applicationList">
+</tbody>
+</table>
+</div>
+</section>
+  </main>
+  <dialog id="dialog">
+<form id="applicationForm" method="dialog">
+<div class="dialog-heading">
+<div>
+<p class="eyebrow">Add to tracker</p>
+<h2>Track an application</h2>
+</div>
+<button class="close" value="cancel" aria-label="Close">×</button>
+</div>
+<label>Company<input name="company" required>
+</label>
+<label>Role<input name="title" required>
+</label>
+<label>Stage<select name="stage">
+<option>Saved</option>
+<option>Applied</option>
+<option>Interview</option>
+<option>Offer</option>
+<option>Closed</option>
+</select>
+</label>
+<label>Applied date<input name="applied" type="date">
+</label>
+<label>Follow-up date<input name="followUp" type="date">
+</label>
+<button class="button primary" value="default">Save application</button>
+</form>
+</dialog>
+<div id="toast" class="toast" role="status" aria-live="polite">
+</div>
+  <script src="./app.js">
+</script>
+</body>
+</html>

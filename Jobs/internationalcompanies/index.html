@@ -1,0 +1,74 @@
+<!doctype html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="robots" content="noindex,nofollow">
+  <title>Global Hiring Directory | Kirsten Umali</title>
+  <link rel="stylesheet" href="./style.css">
+  <style>
+    .refresh-row{display:flex;align-items:center;gap:11px;margin-top:12px;color:var(--muted);font-size:.82rem}.refresh{border:1px solid var(--line);border-radius:7px;background:transparent;color:var(--text);font:inherit;font-weight:750;padding:8px 10px;cursor:pointer}.score-stack{display:grid;justify-items:end;gap:6px}.fit-score{color:#062326;background:var(--gold);font-weight:850;font-size:.72rem;padding:5px 8px;border-radius:99px;white-space:nowrap}.fit-reason{color:var(--muted);font-size:.77rem;display:block;margin:-5px 0 15px}.panel{display:flex;justify-content:space-between;gap:28px;margin-top:28px;padding:23px;background:var(--panel);border:1px solid var(--line);border-radius:13px}.panel h2{margin:0;letter-spacing:-.03em}.panel p:not(.eyebrow){color:var(--muted);font-size:.9rem;max-width:570px}.live-links{display:grid;align-content:center;gap:8px;min-width:205px}.live-links a{color:var(--accent);font-weight:800;text-decoration:none;font-size:.9rem}@media(max-width:650px){.refresh-row,.panel{align-items:start;flex-direction:column}}
+  </style>
+<link rel="stylesheet" href="/tool-nav.css"></head>
+<body>
+  <main class="shell">
+    <header class="topbar">
+<a class="brand" href="/">K/&gt; <span>Global Hiring Directory</span>
+</a>
+<a class="back" href="/jobapplier/">Job Copilot ↗</a>
+</header>
+<nav class="tool-nav" aria-label="Main menu"><a href="/">Portfolio</a><a href="/jobapplier/">Job Copilot</a><a href="/jobapplierindeed/">Indeed</a><a href="/cybersecurityjobs/">Cybersecurity</a><a class="active" aria-current="page" href="/internationalcompanies/">Global</a><a href="/bigcompaniesuae/">Big Companies UAE</a><a href="/internationeuropejobs/">Europe</a><a href="/biggersalary/">$100K+</a><a href="/contentcreatorbuilder/">Content Builder</a></nav>
+    <section class="hero">
+      <p class="eyebrow">LinkedIn-powered discovery</p>
+      <h1>Look beyond<br>
+<em>borders.</em>
+</h1>
+      <p>Companies with distributed teams, worldwide roles, and international opportunity. Use LinkedIn to discover live openings, then verify every requirement on the employer’s official careers page.</p>
+      <div class="search-row">
+<input id="search" type="search" placeholder="Search company, role, or skill">
+<a id="linkedinSearch" class="button primary" href="https://www.linkedin.com/jobs/search/?keywords=remote%20worldwide%20engineering" target="_blank" rel="noopener">Search LinkedIn jobs ↗</a>
+</div>
+      <div class="refresh-row">
+<button id="refreshOpportunities" class="refresh" type="button">Refresh past 24 hours</button>
+<span id="refreshStatus" aria-live="polite">Ready to search current LinkedIn results.</span>
+</div>
+    </section>
+
+    <section class="principle" aria-label="How the directory works">
+<strong>How to use this:</strong>
+<span>These are company profiles—not a promise that every vacancy accepts every country. Open the official role, check its location and work-authorization notes, then apply manually.</span>
+</section>
+
+    <section class="toolbar" aria-label="Directory filters">
+      <div class="filters" role="group" aria-label="Hiring model">
+<button class="filter active" data-filter="all" type="button">All companies</button>
+<button class="filter" data-filter="worldwide" type="button">Worldwide roles</button>
+<button class="filter" data-filter="remote" type="button">Remote-first</button>
+<button class="filter" data-filter="engineering" type="button">Engineering</button>
+</div>
+      <p id="resultCount" aria-live="polite">
+</p>
+    </section>
+    <section id="companyList" class="company-grid" aria-label="Internationally distributed companies">
+</section>
+    <section class="live-search panel" aria-labelledby="liveSearchTitle">
+<div>
+<p class="eyebrow">Fresh discovery</p>
+<h2 id="liveSearchTitle">Current searches, ready to open</h2>
+<p>These searches use LinkedIn’s past-24-hours filter. LinkedIn decides which postings are available for your account and location.</p>
+</div>
+<div id="liveSearchLinks" class="live-links">
+</div>
+</section>
+    <section class="footer-note">
+<p class="eyebrow">A careful shortlist</p>
+<h2>Follow the source, not the label.</h2>
+<p>Work location, employer-of-record availability, visa sponsorship, and eligibility can vary by opening. This directory links you to the primary evidence and LinkedIn discovery page for each company.</p>
+<span id="updated">
+</span>
+</section>
+  </main>
+  <script src="./app.js">
+</script>
+</body>
+</html>

@@ -1,0 +1,11 @@
+node_modules/
+.env
+*.log
+.DS_Store
+Thumbs.db
+dist/
+build/
+*.zip
+server/node_modules/
+server/key.pem
+server/cert.pem

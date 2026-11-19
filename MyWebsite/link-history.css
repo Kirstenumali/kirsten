@@ -1,0 +1,11 @@
+.link-last-clicked {
+  display: inline-block;
+  align-self: center;
+  font-size: 0.72rem;
+  line-height: 1.5;
+  color: var(--muted, #aebbd0);
+  overflow-wrap: anywhere;
+}
+.links {
+  align-items: center;
+}
