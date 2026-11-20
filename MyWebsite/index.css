@@ -19,6 +19,8 @@
   --shadow-lg: 0 32px 100px rgba(14, 36, 43, 0.15);
   --radius: 10px;
   --max: 1180px;
+  --page-width: 1300px;
+  --page-gutter: clamp(24px, 4vw, 60px);
 }
 
 :root[data-theme="dark"] {
@@ -67,9 +69,16 @@ body {
 }
 
 main {
-  max-width: 1300px;
+  width: 100%;
+  max-width: var(--page-width);
   margin-inline: auto;
-  padding-inline: clamp(16px, 3vw, 40px);
+}
+
+main > section,
+.hero-shell > *,
+.section > div,
+.contact-section > * {
+  min-width: 0;
 }
 
 :root[data-theme="dark"] body {
@@ -133,7 +142,7 @@ img {
   align-items: center;
   justify-content: space-between;
   gap: 22px;
-  padding: 16px max(40px, calc((100% - var(--max)) / 2));
+  padding: 16px max(var(--page-gutter), calc((100% - var(--page-width)) / 2 + var(--page-gutter)));
   border-bottom: 1px solid rgba(121, 149, 158, 0.18);
   background: rgba(244, 249, 250, 0.82);
   backdrop-filter: blur(18px);
@@ -423,7 +432,7 @@ img {
 }
 
 .hero {
-  padding: 34px 20px 22px;
+  padding: 34px var(--page-gutter) 22px;
 }
 
 .hero-shell {
@@ -467,7 +476,7 @@ img {
   overflow: hidden;
   display: flex;
   min-width: 0;
-  min-height: 750px;
+  min-height: clamp(580px, 76svh, 750px);
   flex-direction: column;
   justify-content: center;
   align-items: center;
@@ -781,7 +790,7 @@ h3 {
   gap: 12px;
   max-width: none;
   margin: 0 auto;
-  padding: 12px 20px 20px;
+  padding: 12px var(--page-gutter) 20px;
 }
 
 .stats-band article {
@@ -829,7 +838,7 @@ h3 {
 .contact-section {
   max-width: none;
   margin: 0 auto;
-  padding: 82px 20px;
+  padding: 82px var(--page-gutter);
   scroll-margin-top: 100px;
 }
 
@@ -1418,8 +1427,8 @@ h3 {
 
 .photo-slide-section {
   padding: 0;
-  width: 100vw;
-  margin-left: calc(-50vw + 50%);
+  width: 100%;
+  margin: 0;
   overflow: hidden;
 }
 
@@ -1515,9 +1524,9 @@ h3 {
   display: flex;
   justify-content: space-between;
   gap: 16px;
-  max-width: 1300px;
+  max-width: var(--page-width);
   margin: 0 auto;
-  padding: 0 clamp(36px, calc(3vw + 20px), 60px) 42px;
+  padding: 0 var(--page-gutter) 42px;
   color: var(--muted);
   font-size: 0.94rem;
 }
@@ -1676,7 +1685,7 @@ h3 {
 
 @media (max-width: 680px) {
   .site-header {
-    padding-inline: 28px;
+    padding-inline: var(--page-gutter);
   }
 
   .header-actions,
@@ -1697,6 +1706,7 @@ h3 {
 
   .nav-links {
     max-width: 100%;
+    flex-basis: 100%;
   }
 
   .language-toggle {
@@ -1704,7 +1714,7 @@ h3 {
   }
 
   .hero {
-    padding-inline: 12px;
+    padding-inline: var(--page-gutter);
   }
 
   .hero-copy,
@@ -1740,12 +1750,12 @@ h3 {
   }
 
   .stats-band {
-    padding-inline: 12px;
+    padding-inline: var(--page-gutter);
   }
 
   .section,
   .contact-section {
-    padding: 64px 12px;
+    padding: 64px var(--page-gutter);
   }
 
 
