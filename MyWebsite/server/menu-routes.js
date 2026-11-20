@@ -3,7 +3,8 @@ const path = require('path');
 
 module.exports = function mountMenu(app) {
   const root = path.resolve(__dirname, '../..');
-  app.get('/', (req, res) => res.sendFile(path.join(root, 'Menu/index.html')));
+  app.get('/', (req, res) => res.sendFile(path.join(root, 'MyWebsite/index.html')));
+  app.get('/mainmenu', (req, res) => res.sendFile(path.join(root, 'Menu/index.html')));
   for (const folder of ['Menu', 'BugBountyCompany', 'ContentCreator', 'Jobs', 'MyWebsite']) {
     app.use('/' + folder, express.static(path.join(root, folder)));
   }

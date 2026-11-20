@@ -1,4 +1,61 @@
 const year = document.querySelector("#year");
+// Keep the main heading readable while a decorative terminal line types below it.
+function initHeroTypewriter() {
+  const output = document.querySelector("[data-hero-typewriter]");
+  if (!output) return;
+  const phrases = {
+    en: ["Connecting ideas to reality.", "Building robot experiences.", "Making systems work together."],
+    es: ["Conectando ideas con la realidad.", "Creando experiencias robóticas.", "Conectando sistemas."],
+    de: ["Ideen werden Wirklichkeit.", "Erlebnisse mit Robotern bauen.", "Systeme zusammenbringen."],
+    ar: ["أحول الأفكار إلى واقع.", "أبني تجارب للروبوتات.", "أجعل الأنظمة تعمل معاً."]
+  };
+  const motion = window.matchMedia("(prefers-reduced-motion: reduce)");
+  let timer;
+  let phraseIndex = 0;
+  let length = 0;
+  let deleting = false;
+
+  function tick() {
+    const list = phrases[document.documentElement.lang] || phrases.en;
+    const phrase = Array.from(list[phraseIndex % list.length]);
+    length += deleting ? -1 : 1;
+    output.textContent = phrase.slice(0, length).join("");
+    let delay = deleting ? 30 : 65;
+    if (length === phrase.length) {
+      deleting = true;
+      delay = 2200;
+    } else if (length === 0) {
+      deleting = false;
+      phraseIndex += 1;
+      delay = 350;
+    }
+    timer = window.setTimeout(tick, delay);
+  }
+
+  function restart() {
+    window.clearTimeout(timer);
+    phraseIndex = 0;
+    length = 0;
+    deleting = false;
+    const list = phrases[document.documentElement.lang] || phrases.en;
+    output.textContent = list[0];
+    if (!motion.matches && !document.hidden) {
+      length = Array.from(list[0]).length;
+      deleting = true;
+      timer = window.setTimeout(tick, 2200);
+    }
+  }
+
+  new MutationObserver(restart).observe(document.documentElement, {
+    attributes: true, attributeFilter: ["lang"]
+  });
+  motion.addEventListener("change", restart);
+  document.addEventListener("visibilitychange", restart);
+  restart();
+}
+
+initHeroTypewriter();
+
 const languageToggle = document.querySelector("[data-language-toggle]");
 const themeToggle = document.querySelector("[data-theme-toggle]");
 const themeLabel = document.querySelector("[data-theme-label]");
